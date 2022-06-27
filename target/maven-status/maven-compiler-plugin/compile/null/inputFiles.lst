@@ -1,4 +1,4 @@
-/home/matheus/estudo/getting-started-quarkus-kafka/src/main/java/org/acme/Movie.java
-/home/matheus/estudo/getting-started-quarkus-kafka/src/main/java/org/acme/MovieProducer.java
-/home/matheus/estudo/getting-started-quarkus-kafka/src/main/java/org/acme/MovieConsumer.java
-/home/matheus/estudo/getting-started-quarkus-kafka/src/main/java/org/acme/MovieResource.java
+/home/matheus/quarkus-kafka/src/main/java/org/acme/MovieConsumer.java
+/home/matheus/quarkus-kafka/src/main/java/org/acme/MovieResource.java
+/home/matheus/quarkus-kafka/src/main/java/org/acme/MovieProducer.java
+/home/matheus/quarkus-kafka/src/main/java/org/acme/Movie.java
