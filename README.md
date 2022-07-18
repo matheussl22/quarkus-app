@@ -1,35 +1,15 @@
-# Getting started with Apache Kafka and Quarkus 
+# Application
+This repository was made with Quarkus, Rabbitmq, flyway and provide some endpoints.
+To connect to postgresql, Hibernate ORM Panache was used. The project was deploy with minikube.
 
-This project demonstrates how to build a Quarkus application using Apache Kafka in less than 10 minutes.
-It uses Reactive Messaging to simplify the interaction with Kafka.
+# Architecture
+![](img.png)
 
-## Start the broker
-
-You would need a Kafka broker.
-Start one using:
-
+## Start the rabbitmq, mongo, postgresql
+Start using:
 ```shell script
 docker-compose up -d
-```
 
-**NOTE:** Stop the broker using `docker-compose down; docker-compose rm`
-
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw quarkus:dev
-```
-
-## Use the application
-
-
-```shell script
-curl --header "Content-Type: application/json" \
-  --request POST \
-  --data '{"year":2008, "title":"The Dark Knight"}' \
-  http://localhost:8080/
-```
 
 ## Packaging and running the application
 
@@ -58,7 +38,3 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 ```shell script
 ./mvnw package -Pnative -Dquarkus.native.container-build=true
 ```
-
-You can then execute your native executable with: `./target/getting-started-kafka-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
