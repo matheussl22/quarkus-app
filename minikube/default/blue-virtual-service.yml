@@ -11,16 +11,16 @@ spec:
   http:
     - match:
       - uri:
-          prefix: /balance-service
+          prefix: /balance
       route:
       - destination:
-          host: balance-service
+          host: balance
           port:
             number: 8090
           subset: blue
         weight: 70
       - destination:
-          host: balance-service
+          host: balance
           port:
             number: 8090
           subset: green

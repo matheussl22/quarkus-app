@@ -4,7 +4,7 @@ metadata:
   name: balance-service-rule
   namespace: bank-app
 spec:
-  host: balance-service
+  host: balance
   subsets:
   - name: blue
     labels:

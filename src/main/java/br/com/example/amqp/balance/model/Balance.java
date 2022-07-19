@@ -1,12 +1,14 @@
 package br.com.example.amqp.balance.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 import java.math.BigDecimal;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @Entity
 public class Balance extends PanacheEntityBase {
@@ -15,16 +17,14 @@ public class Balance extends PanacheEntityBase {
     private Integer id;
     private String name;
     private BigDecimal value;
+
     @Transient
     private BigDecimal initialBalance;
 
-    public Balance() {
-    }
+    @Transient
+    private String hostName;
 
-    public Balance(Integer userId, String name, BigDecimal value) {
-        this.id = id;
-        this.name = name;
-        this.value = value;
+    public Balance() {
     }
 
     public Integer getId() {
@@ -34,7 +34,6 @@ public class Balance extends PanacheEntityBase {
     public void setId(Integer id) {
         this.id = id;
     }
-
 
     public String getName() {
         return name;
@@ -48,13 +47,16 @@ public class Balance extends PanacheEntityBase {
         return value;
     }
 
-    public BigDecimal getInitialBalance() {
-        return initialBalance;
-    }
-
     public void setInitialBalance(BigDecimal initialBalance) {
         this.value = initialBalance;
-        this.initialBalance = initialBalance;
+    }
+
+    public String getHostName() {
+        try {
+            return InetAddress.getLocalHost().getHostName();
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void setValue(BigDecimal value) {

@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: balance-app
-          image: matheusmatias/quarkus-project:0.0.10
+          image: matheusmatias/quarkus-project:0.0.12
           imagePullPolicy: Always
           ports:
             - containerPort: 8090
